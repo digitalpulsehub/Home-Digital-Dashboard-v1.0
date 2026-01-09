@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digital Dashboard</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Header with Clock and Date -->
+        <header class="header">
+            <div class="clock-section">
+                <div id="clock" class="digital-clock">00:00:00</div>
+                <div id="date" class="date"></div>
+                <div class="last-update">Last update: <span id="lastUpdateTime">Just now</span></div>
+            </div>
+            <div class="header-controls">
+                <button id="refreshBtn" class="refresh-btn">🔄 F5 REFRESH</button>
+                <button id="autoRefreshToggle" class="auto-refresh-btn active">⏱️ AUTO-REFRESH ON</button>
+            </div>
+        </header>
+
+        <!-- Main Grid -->
+        <div class="dashboard-grid">
+            <!-- Weather Section -->
+            <section class="widget weather-widget">
+                <div class="widget-header">
+                    <h2>WEATHER</h2>
+                    <span class="widget-icon">🌤️</span>
+                </div>
+                <div id="weather" class="weather-content">
+                    <div class="loading">Loading...</div>
+                </div>
+                <div class="api-credit">Data: Open-Meteo API</div>
+            </section>
+
+            <!-- News Section -->
+            <section class="widget news-widget">
+                <div class="widget-header">
+                    <h2>TOP 5 NEWS</h2>
+                    <span class="widget-icon">📰</span>
+                </div>
+                <ul id="news" class="news-list">
+                    <li class="loading">Loading...</li>
+                </ul>
+            </section>
+
+            <!-- Exchange Rates -->
+            <section class="widget exchange-widget">
+                <div class="widget-header">
+                    <h2>EXCHANGE RATES <span class="live-indicator"></span></h2>
+                    <span class="widget-icon">💱</span>
+                </div>
+                <div id="exchange" class="exchange-content">
+                    <div class="loading">Loading...</div>
+                </div>
+                <div class="api-credit">Data: Frankfurter API</div>
+            </section>
+
+            <!-- Top AI Models -->
+            <section class="widget ai-widget">
+                <div class="widget-header">
+                    <h2>TOP 5 AI MODELS</h2>
+                    <span class="widget-icon">🤖</span>
+                </div>
+                <div id="aimodels" class="ai-content">
+                    <div class="loading">Loading...</div>
+                </div>
+                <div class="api-credit">Data: Artificial Analysis</div>
+            </section>
+
+            <!-- Top 5 Crypto Trends -->
+            <section class="widget crypto-widget">
+                <div class="widget-header">
+                    <h2>TOP 5 CRYPTO</h2>
+                    <span class="widget-icon">₿</span>
+                </div>
+                <div id="crypto" class="crypto-content">
+                    <div class="loading">Loading...</div>
+                </div>
+                <div class="api-credit">Data: CoinGecko API</div>
+            </section>
+
+            <!-- Trending Hashtags -->
+            <section class="widget hashtags-widget">
+                <div class="widget-header">
+                    <h2>TRENDING HASHTAGS</h2>
+                    <span class="widget-icon">#️⃣</span>
+                </div>
+                <div id="hashtags" class="hashtags-content">
+                    <div class="loading">Loading...</div>
+                </div>
+            </section>
+
+            <!-- Twitter Trends -->
+            <section class="widget twitter-widget">
+                <div class="widget-header">
+                    <h2>TWITTER TRENDS</h2>
+                    <span class="widget-icon">🐦</span>
+                </div>
+                <div id="twitter" class="twitter-content">
+                    <div class="loading">Loading...</div>
+                </div>
+            </section>
+
+            <!-- Daily Exercise Tips -->
+            <section class="widget exercise-widget">
+                <div class="widget-header">
+                    <h2>DAILY EXERCISE TIPS</h2>
+                    <span class="widget-icon">💪</span>
+                </div>
+                <ul id="exercise" class="exercise-list">
+                    <li class="loading">Loading...</li>
+                </ul>
+            </section>
+
+            <!-- Motivational Quotes -->
+            <section class="widget quotes-widget">
+                <div class="widget-header">
+                    <h2>MOTIVATIONAL QUOTES</h2>
+                    <span class="widget-icon">💭</span>
+                </div>
+                <div id="quotes" class="quotes-content">
+                    <div class="loading">Loading...</div>
+                </div>
+            </section>
+
+            <!-- Top 5 Recipes -->
+            <section class="widget recipes-widget">
+                <div class="widget-header">
+                    <h2>TOP 5 RECIPES TODAY</h2>
+                    <span class="widget-icon">🍳</span>
+                </div>
+                <ul id="recipes" class="recipes-list">
+                    <li class="loading">Loading...</li>
+                </ul>
+            </section>
+
+            <!-- English Slang Words -->
+            <section class="widget slang-widget">
+                <div class="widget-header">
+                    <h2>TOP 5 ENGLISH SLANG</h2>
+                    <span class="widget-icon">💬</span>
+                </div>
+                <div id="slang" class="slang-content">
+                    <div class="loading">Loading...</div>
+                </div>
+            </section>
+
+            <!-- Top 5 Cities -->
+            <section class="widget cities-widget">
+                <div class="widget-header">
+                    <h2>TOP 5 VISITED CITIES</h2>
+                    <span class="widget-icon">🌍</span>
+                </div>
+                <div id="cities" class="cities-content">
+                    <div class="loading">Loading...</div>
+                </div>
+            </section>
+        </div>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <div class="refresh-status">
+                <span class="status-indicator active"></span>
+                <span id="nextRefresh">Next refresh in: 30s</span>
+            </div>
+            <div class="footer-info">
+                <span>Digital Dashboard v1.0</span>
+                <span>•</span>
+                <span>Data updates automatically every 30 seconds</span>
+                <span>•</span>
+                <span>Weather & Exchange rates update every 5 minutes</span>
+            </div>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
